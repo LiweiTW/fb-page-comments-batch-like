@@ -5,7 +5,7 @@ import { GraphService } from './graph.service';
 @Injectable()
 export class PostService {
 
-  posts: Post[];
+  posts: any;
 
   constructor(private graphService: GraphService) { }  
 

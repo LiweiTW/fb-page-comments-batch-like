@@ -20,9 +20,8 @@ export class GraphService {
     this.pageToken = pageToken;
   }
 
-  fetchPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.reqUrl + this.pageToken);
-    // return of(POSTS);
+  fetchPosts(): Observable<any> {
+    return this.http.get<any>(this.reqUrl + this.pageToken);
   }
 
 }
