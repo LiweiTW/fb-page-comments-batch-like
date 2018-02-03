@@ -13,10 +13,11 @@ export class PostsComponent implements OnInit {
   posts: Post[];
   token: string;
 
+
   constructor(
-    private postService: PostService,
+    public postService: PostService,
     private graphService: GraphService
-  ) { }
+  ) {  }
 
   ngOnInit() {
     
