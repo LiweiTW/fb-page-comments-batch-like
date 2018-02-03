@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">發佈時間</th>
+        <th scope="col">內容</th>
+        <th scope="col">發佈人</th>
+        <th scope="col">動作</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let post of postService.getPosts()">
+        <tr>
+          <th scope="row"><img src="{{ post.picture }}" class="img-fluid" alt="post image"></th>
+          <td>{{ post.created_time | date:'yyyy-MM-dd HH:mm' }}</td>
+          <td>{{ post.message }}</td>
+          <td>{{ post.admin_creator.name }}</td>
+          <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                  <button (click)="openLink(post.link)" type="button" class="btn btn-secondary">新聞</button>
+                  <button (click)="openLink('https://business.facebook.com/'+post.id)" type="button" class="btn btn-secondary">貼文</button>
+                  <button type="button" class="btn btn-secondary">按讚</button>
+                </div>
+          </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Page Token</span>
+  </div>
+  <input #pageToken
+    (keyup.enter)="confirmToken(pageToken.value)"
+    type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="{{ storedToken }}">
+  <button (click)="confirmToken(pageToken.value)">Add</button>
+</div>
